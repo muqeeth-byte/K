@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Krishnaja R Nair — Finance, HR &amp; Education Professional</title>
+<meta name="description" content="Krishnaja R Nair is a postgraduate in education and BBA graduate in Finance &amp; HR, targeting analyst, operations, HR and ed-tech roles. Based in Hyderabad, India." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+<style>
+  /* ---------- Design tokens (same palette as the original) ---------- */
+  :root {
+    --background: hsl(38 33% 97%);
+    --foreground: hsl(222 32% 11%);
+    --card: #ffffff;
+    --muted: hsl(222 16% 93%);
+    --muted-fg: hsl(222 10% 40%);
+    --accent: hsl(186 52% 30%);
+    --border: hsl(222 16% 87%);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Archivo", sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+  }
+  ::selection { background: var(--accent); color: var(--background); }
+  a { color: inherit; text-decoration: none; }
+  ul, ol { margin: 0; padding: 0; list-style: none; }
+  h1, h2, h3, p, dl, dd { margin: 0; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .font-display { font-family: "Fraunces", serif; }
+  .font-mono { font-family: "Space Mono", monospace; }
+  .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
+  @media (min-width: 640px) { .wrap { padding: 0 1.5rem; } }
+  .ic { width: 16px; height: 16px; flex-shrink: 0; }
+  .ic-lg { width: 20px; height: 20px; flex-shrink: 0; }
+  .ic-xl { width: 24px; height: 24px; flex-shrink: 0; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    border-bottom: 1px solid hsl(222 16% 87% / 0.7);
+    background: hsl(38 33% 97% / 0.8);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; }
+  @media (min-width: 640px) { .header-inner { padding: 12px 24px; } }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand-name { display: none; font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
+  @media (min-width: 640px) { .brand-name { display: inline; } }
+  .monogram {
+    display: flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border-radius: 8px;
+    background: var(--foreground); color: var(--background);
+    font-size: 14px; font-weight: 900; letter-spacing: -0.02em;
+  }
+  .nav-desktop { display: none; align-items: center; gap: 4px; }
+  @media (min-width: 1024px) { .nav-desktop { display: flex; } }
+  .nav-desktop a, .footer-nav a {
+    padding: 8px 12px; border-radius: 6px;
+    font-size: 14px; font-weight: 500; color: var(--muted-fg);
+    transition: color .2s;
+  }
+  .nav-desktop a:hover, .footer-nav a:hover { color: var(--foreground); }
+  .header-actions { display: flex; align-items: center; gap: 8px; }
+  .btn-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    border-radius: 999px; font-weight: 700; font-size: 14px;
+    transition: all .2s; cursor: pointer; border: 1px solid transparent;
+  }
+  .btn-pill:active { transform: scale(.98); }
+  .btn-dark { background: var(--foreground); color: var(--background); padding: 10px 20px; font-weight: 600; }
+  .btn-dark:hover { background: var(--accent); color: var(--background); }
+  .btn-outline { border-color: var(--border); background: transparent; color: var(--foreground); padding: 14px 24px; font-weight: 700; }
+  .btn-outline:hover { background: var(--muted); }
+  .btn-hide-mobile { display: none; }
+  @media (min-width: 640px) { .btn-hide-mobile { display: inline-flex; } }
+  .menu-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 8px;
+    border: 1px solid var(--border); background: transparent; color: var(--foreground); cursor: pointer;
+  }
+  .menu-btn:hover { background: var(--muted); }
+  @media (min-width: 1024px) { .menu-btn { display: none; } }
+
+  /* Mobile sheet */
+  .sheet-overlay {
+    position: fixed; inset: 0; z-index: 60;
+    background: hsl(0 0% 0% / 0.8);
+    opacity: 0; pointer-events: none; transition: opacity .3s;
+  }
+  .sheet-overlay.open { opacity: 1; pointer-events: auto; }
+  .sheet {
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: 61;
+    width: 75%; max-width: 384px; padding: 24px;
+    background: var(--background); color: var(--foreground);
+    border-left: 1px solid var(--border);
+    transform: translateX(100%); transition: transform .3s ease;
+    overflow-y: auto;
+  }
+  .sheet.open { transform: translateX(0); }
+  .sheet-close {
+    position: absolute; top: 16px; right: 16px;
+    background: none; border: 0; cursor: pointer; color: var(--foreground);
+  }
+  .sheet-links { margin-top: 40px; display: flex; flex-direction: column; gap: 4px; }
+  .sheet-links a {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 0; border-bottom: 1px solid var(--border);
+    font-family: "Fraunces", serif; font-size: 24px; font-weight: 700; letter-spacing: -0.01em;
+  }
+  .sheet-links a:hover { color: var(--accent); }
+  .sheet-cta {
+    margin-top: 24px; justify-content: center;
+    background: var(--foreground); color: var(--background);
+    padding: 12px 20px; border-radius: 999px; font-weight: 600; font-size: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; overflow: hidden; }
+  .grid-lines {
+    position: absolute; inset: 0; pointer-events: none; opacity: .6;
+    background-image:
+      linear-gradient(to right, hsl(222 32% 11% / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(222 32% 11% / 0.05) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .hero-inner { position: relative; padding: 56px 0 64px; }
+  @media (min-width: 640px) { .hero-inner { padding: 80px 0 96px; } }
+  .hero-grid { display: grid; align-items: center; gap: 40px; }
+  @media (min-width: 1024px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; } }
+
+  .eyebrow-row {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px;
+    margin-bottom: 20px;
+    font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .15em; color: var(--accent);
+  }
+  .eyebrow-row .item { display: flex; align-items: center; gap: 6px; }
+  .eyebrow-row .item.muted { color: var(--foreground); opacity: .7; }
+  .eyebrow-row .sep { color: var(--muted-fg); }
+  .ping { position: relative; display: inline-flex; width: 8px; height: 8px; }
+  .ping::before, .ping::after {
+    content: ""; position: absolute; inset: 0; border-radius: 999px; background: var(--accent);
+  }
+  .ping::before { opacity: .6; animation: ping 1.4s cubic-bezier(0,0,.2,1) infinite; }
+  .ping::after { position: relative; }
+  @keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
+
+  .hero h1 {
+    font-family: "Fraunces", serif; font-weight: 900;
+    font-size: 48px; line-height: .98; letter-spacing: -0.03em;
+  }
+  @media (min-width: 640px) { .hero h1 { font-size: 72px; } }
+  .hero-sub {
+    margin-top: 16px; font-family: "Fraunces", serif; font-weight: 500;
+    font-size: 20px; line-height: 1.375; color: hsl(222 32% 11% / 0.8);
+  }
+  @media (min-width: 640px) { .hero-sub { font-size: 24px; } }
+  .hero-lede {
+    margin-top: 24px; max-width: 36rem;
+    font-size: 16px; line-height: 1.625; color: var(--muted-fg);
+  }
+  @media (min-width: 640px) { .hero-lede { font-size: 18px; } }
+  .chips { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    border: 1px solid var(--border); background: var(--card);
+    border-radius: 999px; padding: 6px 14px;
+    font-size: 12px; font-weight: 600; color: hsl(222 32% 11% / 0.8);
+  }
+  .cta-row { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+
+  .glance {
+    border: 1px solid var(--border); background: var(--card);
+    border-radius: 16px; padding: 24px; box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  }
+  @media (min-width: 640px) { .glance { padding: 28px; } }
+  .label {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 20px;
+    font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .15em; color: var(--muted-fg);
+  }
+  .label .ic { color: var(--accent); }
+  .glance dl > div { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-top: 1px solid var(--border); }
+  .glance dl > div:first-child { border-top: 0; }
+  .glance dt {
+    font-family: "Space Mono", monospace; font-size: 10px; text-transform: uppercase;
+    letter-spacing: .15em; color: var(--muted-fg);
+  }
+  .glance dd { font-size: 14px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; }
+  .glance .ic { margin-top: 2px; color: var(--accent); }
+  .glance a:hover { color: var(--accent); }
+
+  /* ---------- Stats ---------- */
+  .stats { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: hsl(0 0% 100% / 0.5); }
+  .stats-grid { max-width: 72rem; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; }
+  @media (min-width: 1024px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+  .stat { padding: 32px 20px; border-left: 1px solid var(--border); }
+  .stat:nth-child(odd) { border-left: 0; }
+  @media (min-width: 1024px) { .stat { border-left: 1px solid var(--border); padding: 40px 24px; } .stat:first-child { border-left: 0; } }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--border); }
+  @media (min-width: 1024px) { .stat:nth-child(n+3) { border-top: 0; } }
+  @media (min-width: 640px) { .stat { padding-top: 40px; padding-bottom: 40px; } }
+  .stat-value { font-family: "Fraunces", serif; font-weight: 900; font-size: 36px; letter-spacing: -0.02em; }
+  @media (min-width: 640px) { .stat-value { font-size: 48px; } }
+  .stat-label {
+    margin-top: 8px; font-family: "Space Mono", monospace; font-size: 11px;
+    text-transform: uppercase; letter-spacing: .15em; color: var(--muted-fg);
+  }
+
+  /* ---------- Sections ---------- */
+  .section { padding: 80px 0; }
+  @media (min-width: 640px) { .section { padding: 112px 0; } }
+  .section.band { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: hsl(0 0% 100% / 0.4); }
+  .section-head { max-width: 48rem; margin-bottom: 48px; }
+  .section-eyebrow {
+    margin-bottom: 12px; font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .15em; color: var(--accent);
+  }
+  .section-title {
+    font-family: "Fraunces", serif; font-weight: 900;
+    font-size: 30px; line-height: 1.05; letter-spacing: -0.02em;
+  }
+  @media (min-width: 640px) { .section-title { font-size: 48px; } }
+  .section-intro { margin-top: 16px; font-size: 16px; line-height: 1.625; color: var(--muted-fg); }
+  @media (min-width: 640px) { .section-intro { font-size: 18px; } }
+
+  .two-col { display: grid; gap: 40px; }
+  @media (min-width: 1024px) { .two-col { grid-template-columns: repeat(12, 1fr); } .span-7 { grid-column: span 7; } .span-5 { grid-column: span 5; } .span-8 { grid-column: span 8; } .span-4 { grid-column: span 4; } }
+
+  /* Profile */
+  .prose { display: grid; gap: 20px; font-size: 16px; line-height: 1.625; color: hsl(222 32% 11% / 0.8); }
+  @media (min-width: 640px) { .prose { font-size: 18px; } }
+  .card {
+    border: 1px solid var(--border); background: var(--card);
+    border-radius: 16px; padding: 24px;
+  }
+  @media (min-width: 640px) { .card { padding: 28px; } }
+  .card-label {
+    margin-bottom: 16px; font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .15em; color: var(--muted-fg);
+  }
+  .bullet-list { display: grid; gap: 12px; }
+  .bullet-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; font-weight: 600; }
+  .dot { width: 6px; height: 6px; border-radius: 999px; background: var(--accent); flex-shrink: 0; margin-top: 7px; }
+
+  /* Roles */
+  .band-bg { background: hsl(0 0% 100% / 0.4); }
+  .grid-3 { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 640px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+  .role {
+    display: flex; flex-direction: column; height: 100%;
+    border: 1px solid var(--border); background: var(--background);
+    border-radius: 12px; padding: 20px; transition: border-color .3s, box-shadow .3s;
+  }
+  @media (min-width: 640px) { .role { padding: 24px; } }
+  .role:hover { border-color: var(--accent); box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+  .role-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .idx { font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700; color: var(--accent); }
+  .role h3 { font-family: "Fraunces", serif; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+  .role p { margin-top: 8px; font-size: 14px; line-height: 1.625; color: var(--muted-fg); }
+
+  /* Experience */
+  .stack { display: grid; gap: 20px; }
+  .exp { border: 1px solid var(--border); background: var(--card); border-radius: 16px; padding: 24px; }
+  @media (min-width: 640px) { .exp { padding: 32px; } }
+  .exp-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+  .exp h3 { font-family: "Fraunces", serif; font-size: 20px; font-weight: 700; letter-spacing: -0.01em; }
+  @media (min-width: 640px) { .exp h3 { font-size: 24px; } }
+  .period {
+    font-family: "Space Mono", monospace; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .15em; color: var(--accent);
+  }
+  .exp-org { margin-top: 4px; font-size: 14px; font-weight: 600; color: hsl(222 32% 11% / 0.7); }
+  .exp ul { margin-top: 20px; display: grid; gap: 12px; }
+  .exp li { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.625; color: hsl(222 32% 11% / 0.8); }
+  @media (min-width: 640px) { .exp li { font-size: 16px; } }
+  .exp li .dot { margin-top: 9px; }
+
+  /* Projects */
+  .grid-proj { display: grid; gap: 20px; }
+  @media (min-width: 1024px) { .grid-proj { grid-template-columns: repeat(3, 1fr); } }
+  .proj {
+    display: flex; flex-direction: column; height: 100%;
+    border: 1px solid var(--border); background: var(--background);
+    border-radius: 16px; padding: 24px; transition: border-color .3s, box-shadow .3s;
+  }
+  .proj:hover { border-color: var(--accent); box-shadow: 0 1px 2px rgba(0,0,0,.05); }
+  .proj-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+  .proj-period { font-family: "Space Mono", monospace; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--muted-fg); }
+  .proj h3 { font-family: "Fraunces", serif; font-size: 18px; font-weight: 700; line-height: 1.375; letter-spacing: -0.01em; }
+  .proj-tags { margin-top: 8px; font-family: "Space Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: hsl(186 52% 30% / 0.9); }
+  .proj p { margin-top: 16px; font-size: 14px; line-height: 1.625; color: var(--muted-fg); }
+
+  /* Skills */
+  .grid-2 { display: grid; gap: 20px; }
+  @media (min-width: 768px) { .grid-2 { grid-template-columns: repeat(2, 1fr); } }
+  .skill-card h3 { margin-bottom: 16px; font-family: "Fraunces", serif; font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    border: 1px solid var(--border); background: var(--background);
+    border-radius: 999px; padding: 6px 12px;
+    font-size: 12px; font-weight: 600; color: hsl(222 32% 11% / 0.8);
+    transition: border-color .2s, color .2s;
+  }
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* Education */
+  .timeline { position: relative; display: grid; gap: 20px; border-left: 1px solid var(--border); padding-left: 24px; }
+  .timeline li { position: relative; }
+  .timeline .node {
+    position: absolute; left: calc(-24px - 6px); top: 6px;
+    width: 12px; height: 12px; border-radius: 999px;
+    background: var(--accent); border: 2px solid var(--background);
+  }
+  .edu-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
+  .edu-head h3 { font-family: "Fraunces", serif; font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
+  @media (min-width: 640px) { .edu-head h3 { font-size: 18px; } }
+  .edu-period { font-family: "Space Mono", monospace; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .15em; color: var(--muted-fg); }
+  .edu-org { margin-top: 4px; font-size: 14px; font-weight: 600; color: hsl(222 32% 11% / 0.7); }
+  .cert {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    border: 1px solid var(--border); background: var(--background);
+    border-radius: 12px; padding: 16px;
+  }
+  .cert + .cert { margin-top: 12px; }
+  .cert p:first-child { font-size: 14px; font-weight: 700; }
+  .cert p:last-child { font-family: "Space Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; color: var(--muted-fg); margin-top: 2px; }
+  .cert .ic-lg { color: var(--accent); }
+  .lead-card { border: 1px solid var(--border); background: var(--background); border-radius: 12px; padding: 16px; }
+  .lead-card + .lead-card { margin-top: 12px; }
+  .lead-card p:first-child { font-size: 14px; font-weight: 700; }
+  .lead-card p:last-child { margin-top: 4px; font-size: 14px; line-height: 1.625; color: var(--muted-fg); }
+
+  /* Languages & interests */
+  .lang-grid { display: grid; gap: 12px; }
+  @media (min-width: 640px) { .lang-grid { grid-template-columns: repeat(2, 1fr); } }
+  .lang {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    border: 1px solid var(--border); background: var(--card);
+    border-radius: 12px; padding: 12px 16px;
+  }
+  .lang p:first-child { font-size: 14px; font-weight: 700; }
+  .lang p:last-child { font-family: "Space Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .15em; color: var(--muted-fg); }
+  .level {
+    border: 1px solid var(--border); background: var(--background);
+    border-radius: 999px; padding: 4px 12px;
+    font-family: "Space Mono", monospace; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: .15em; color: var(--accent); white-space: nowrap;
+  }
+  .interest { border: 1px solid var(--border); background: var(--card); border-radius: 12px; padding: 12px 16px; font-size: 14px; font-weight: 600; }
+  .interest + .interest { margin-top: 12px; }
+
+  /* Contact */
+  .contact { position: relative; overflow: hidden; border-top: 1px solid var(--border); background: var(--foreground); color: var(--background); }
+  .halftone-accent {
+    position: absolute; inset: 0; pointer-events: none; opacity: .4;
+    background-image: radial-gradient(hsl(186 52% 30% / 0.22) 1px, transparent 1.5px);
+    background-size: 7px 7px;
+  }
+  .contact-inner { position: relative; padding: 96px 0; }
+  @media (min-width: 640px) { .contact-inner { padding: 128px 0; } }
+  .contact .section-eyebrow { color: var(--accent); }
+  .contact h2 { font-family: "Fraunces", serif; font-weight: 900; font-size: 40px; line-height: 1.02; letter-spacing: -0.02em; }
+  @media (min-width: 640px) { .contact h2 { font-size: 60px; } }
+  .contact-lede { margin-top: 20px; max-width: 36rem; font-size: 16px; line-height: 1.625; color: hsl(38 33% 97% / 0.75); }
+  @media (min-width: 640px) { .contact-lede { font-size: 18px; } }
+  .contact-cards { margin-top: 40px; display: grid; gap: 16px; }
+  @media (min-width: 640px) { .contact-cards { grid-template-columns: repeat(3, 1fr); } }
+  .contact-card {
+    display: flex; align-items: center; gap: 12px; min-width: 0;
+    border: 1px solid hsl(38 33% 97% / 0.2); background: hsl(38 33% 97% / 0.05);
+    border-radius: 12px; padding: 16px 20px; transition: background .2s;
+  }
+  a.contact-card:hover { background: hsl(38 33% 97% / 0.1); }
+  .contact-card .ic-lg { color: var(--accent); }
+  .contact-card .meta { min-width: 0; }
+  .contact-card .k { font-family: "Space Mono", monospace; font-size: 10px; text-transform: uppercase; letter-spacing: .15em; color: hsl(38 33% 97% / 0.6); }
+  .contact-card .v { font-size: 14px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .contact-card .arrow { margin-left: auto; }
+  .contact-actions { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn-accent {
+    background: var(--accent); color: var(--background);
+    padding: 14px 24px; font-weight: 700; font-size: 14px;
+  }
+  .btn-accent:hover { background: var(--background); color: var(--foreground); }
+  .btn-ghost-light {
+    border: 1px solid hsl(38 33% 97% / 0.3); color: var(--background);
+    padding: 14px 24px; font-weight: 700; font-size: 14px; background: transparent;
+  }
+  .btn-ghost-light:hover { background: hsl(38 33% 97% / 0.1); }
+
+  /* Footer */
+  footer { border-top: 1px solid var(--border); background: var(--background); }
+  .footer-inner {
+    max-width: 72rem; margin: 0 auto; padding: 40px 16px;
+    display: flex; flex-direction: column; align-items: center; justify-content: space-between; gap: 24px;
+  }
+  @media (min-width: 640px) { .footer-inner { padding: 40px 24px; } }
+  @media (min-width: 768px) { .footer-inner { flex-direction: row; } }
+  .footer-brand { display: flex; align-items: center; gap: 10px; }
+  .footer-brand span { font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
+  .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; }
+  .footer-nav a { padding: 0; font-family: "Space Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; }
+  .copy { font-family: "Space Mono", monospace; font-size: 11px; color: var(--muted-fg); }
+
+  /* ---------- Entrance reveal ---------- */
+  .reveal {
+    opacity: 0; transform: translateY(var(--y, 24px));
+    transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1);
+    transition-delay: var(--d, 0s);
+  }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .ping::before { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+/* =====================================================================
+   CONTENT — edit everything you want to change here.
+   The design and layout are driven by these values.
+   ===================================================================== */
+const CONFIG = {
+  name: "Krishnaja R Nair",
+  email: "krishnaja.work@gmail.com",
+  phone: "+91-9676875489",
+  location: "Hyderabad, Telangana, India",
+  initials: "KN",
+  headline: "Postgraduate in Education · BBA, Finance & HR Management",
+  intro: "Result-oriented recent postgraduate bridging business administration, finance and research methodology. Targeting analyst, operations, HR and ed-tech roles where analytical rigour and organised delivery make a measurable difference.",
+  focusAreas: [
+    "Finance & Business Analysis",
+    "Risk Analysis",
+    "HR Operations",
+    "Organisational Administration",
+    "Strategic & Operations Management",
+    "Education Technology",
+  ],
+  glance: {
+    education: "M.Ed. (TISS) · BBA Finance & HR (IIMC)",
+    experience: "Education Programme Intern, i4Connect",
+    certifications: "Python (NPTEL) · Power BI · Goldman Sachs Risk",
+  },
+};
+
+const NAV_LINKS = [
+  { label: "Profile", href: "#profile" },
+  { label: "Roles", href: "#roles" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Education", href: "#education" },
+  { label: "Contact", href: "#contact" },
+];
+
+const STATS = [
+  { value: 30, suffix: "+", label: "Emergent readers assessed" },
+  { value: 5, suffix: "+", label: "Companies analysed" },
+  { value: 3, suffix: "", label: "Professional certifications" },
+  { value: 6, suffix: "", label: "Languages known" },
+];
+
+const PROFILE_PARAS = [
+  "I am a reliable and result-oriented recent postgraduate in education and a graduate in business administration with Finance and Human Resource Management as majors. My interests span finance and business analysis, risk analysis, HR operations and organisational administration.",
+  "I bring strong leadership and management skills, research methodology, and curriculum, pedagogy and assessment-design expertise — combining analytical rigour with the organisational discipline needed to deliver in resource-conscious environments.",
+  "I am seeking opportunities to make the most of my potential and upgrade my skills over time, with a commitment to nurturing a positive work environment and enhancing organisational effectiveness — driven by determination, responsibility and complete honesty.",
+];
+
+const TARGET_ROLES = [
+  { title: "Office Administrative", desc: "Organisational coordination, records and day-to-day operations." },
+  { title: "Executive Officer", desc: "Supporting leadership with planning, communication and follow-through." },
+  { title: "Human Resources", desc: "HR operations, administration and people processes." },
+  { title: "Business Analyst", desc: "Translating data and processes into clear, actionable insight." },
+  { title: "Finance Analyst", desc: "Accountancy, financial evaluation and reporting." },
+  { title: "Risk Analyst", desc: "Credit and financial risk assessment with mitigation strategies." },
+  { title: "Strategic Management", desc: "Planning, policy analysis and organisational effectiveness." },
+  { title: "Operations Management", desc: "Monitoring, evaluation and resource-coordinated delivery." },
+  { title: "Project Management", desc: "End-to-end project monitoring, reporting and stakeholder coordination." },
+  { title: "Ed-Tech (Non-teaching)", desc: "Academic advisor, curriculum planner and assessment design." },
+];
+
+const EXPERIENCE = [
+  {
+    role: "Education Programme Intern",
+    org: "i4Connect Foundation",
+    place: "Hyderabad",
+    period: "Dec 2024 – Jan 2025",
+    points: [
+      "Assessed reading and comprehension levels of 30+ emergent readers using standardised diagnostic tools in a low-cost school serving underserved communities.",
+      "Designed and implemented targeted literacy intervention plans, achieving measurable improvements in reading fluency.",
+      "Collaborated with 5+ educators to co-develop differentiated instructional materials aligned with foundational literacy standards.",
+      "Maintained detailed progress-monitoring records and delivered weekly feedback reports to school administration, supporting data-informed decision-making.",
+      "Coordinated scheduling and logistics for daily intervention sessions in a resource-constrained environment.",
+    ],
+  },
+];
+
+const PROJECTS = [
+  {
+    title: "Goldman Sachs Risk Analysis",
+    tags: "Risk · Credit Analysis · Job Simulation",
+    period: "Jun 2026",
+    desc: "Completed a job simulation focused on risk assessment and management for Goldman Sachs’ Risk team. Conducted individual credit-risk analysis using quantified financial data, applied critical thinking and quantitative analysis to real-estate scenarios, and developed risk-mitigation strategies.",
+  },
+  {
+    title: "Extended Learning through After-School Activities",
+    tags: "Mixed-Methods Research · Chi-Square · Interviews",
+    period: "Sep 2025 – May 2026",
+    desc: "Exploratory mixed-methods study on extended learning through after-school activities among upper-primary children at a private CBSE school in Hyderabad. Used surveys, chi-square analysis and thematic interviews; found participation builds confidence, focus and identity despite no direct association with academic marks.",
+  },
+  {
+    title: "Securities Comparison — IT & Pharma (Sharpe’s Index)",
+    tags: "Finance · Statistical Analysis · Excel",
+    period: "Aug 2023 – Apr 2024",
+    desc: "Analysed risk-adjusted returns of 5+ publicly listed companies across IT and pharmaceutical sectors using Sharpe’s Index. Applied statistical analysis in Excel to evaluate portfolio performance and produced a structured report with sector-specific investment recommendations.",
+  },
+];
+
+const SKILL_GROUPS = [
+  { title: "Business Administration", items: ["Management & Planning", "Accountancy & Finance", "Project Monitoring & Evaluation"] },
+  { title: "Academic & Research", items: ["Curriculum Planning & Design", "Pedagogy & Assessment Strategies", "Policy Analysis", "Foundational Literacy & Numeracy", "Qualitative & Quantitative Research", "Data Visualisation & Interpretation"] },
+  { title: "Digital Proficiency", items: ["MS Office", "Google Workspace", "Zoom / Teams", "Power BI", "Excel", "PowerPoint", "Python (basic)", "R (basic)", "Overleaf", "AI-assisted productivity tools"] },
+  { title: "Inter-personal", items: ["Communication", "Teamwork & Collaboration", "Active Listening", "Empathy & Compassion", "Leadership", "Adaptability"] },
+  { title: "Intra-personal", items: ["Self-Awareness & Motivation", "Time Management", "Self-Discipline", "Problem-Solving", "Decision-Making", "Critical Thinking", "Resilience", "Accountability", "Punctuality"] },
+];
+
+const EDUCATION = [
+  { degree: "Master in Education (M.Ed.)", org: "Tata Institute of Social Sciences (TISS)", place: "Hyderabad", period: "2024 – 2026" },
+  { degree: "BBA — Finance & Human Resource Management", org: "Indian Institute of Management and Commerce (IIMC)", place: "Hyderabad", period: "2021 – 2024" },
+  { degree: "CBSE Class XII — Maths, Physics, Chemistry, Computer Science", org: "Kendriya Vidyalaya No. 2, Uppal", place: "Hyderabad", period: "2019 – 2021" },
+  { degree: "CBSE Class X", org: "Akshara The School", place: "Hyderabad", period: "2018 – 2019" },
+];
+
+const CERTIFICATIONS = [
+  { title: "Python for Data Science", issuer: "NPTEL" },
+  { title: "Power BI", issuer: "Skill Course E-Learning" },
+  { title: "Risk Analysis Job Simulation", issuer: "Goldman Sachs" },
+];
+
+const LEADERSHIP = [
+  { title: "School Captain & Class Representative", desc: "Managed student grievance redressal and coordinated communication between students and administration." },
+  { title: "Large-scale Cultural Event Planning", desc: "Led planning and execution of multiple large-scale cultural events." },
+];
+
+const LANGUAGES = [
+  { name: "Malayalam", level: "Proficient", note: "Mother tongue" },
+  { name: "English", level: "Proficient", note: "" },
+  { name: "Hindi", level: "Proficient", note: "" },
+  { name: "Telugu", level: "Intermediate", note: "" },
+  { name: "Tamil", level: "Elementary", note: "" },
+  { name: "Punjabi", level: "Elementary", note: "" },
+];
+
+const INTERESTS = ["Classical & Contemporary Vocals", "Animal welfare and care"];
+
+/* =====================================================================
+   RENDERING
+   ===================================================================== */
+const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+const tel = (p) => p.replace(/[^+\d]/g, "");
+const delay = (s) => `--d:${s}s`;
+const icon = (name, cls = "ic") => `<i data-lucide="${name}" class="${cls}"></i>`;
+
+function header() {
+  return `
+  <header class="site-header">
+    <div class="header-inner" style="max-width:72rem;margin:0 auto;">
+      <a href="#top" class="brand">
+        <span class="monogram">${CONFIG.initials}</span>
+        <span class="brand-name">${esc(CONFIG.name)}</span>
+      </a>
+      <nav class="nav-desktop">
+        ${NAV_LINKS.map((l) => `<a href="${l.href}">${l.label}</a>`).join("")}
+      </nav>
+      <div class="header-actions">
+        <a class="btn-pill btn-dark btn-hide-mobile" href="mailto:${CONFIG.email}">Get in touch ${icon("arrow-up-right", "ic")}</a>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="sheet">${icon("menu", "ic-lg")}</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="sheet-overlay" id="overlay"></div>
+  <aside class="sheet" id="sheet" aria-hidden="true">
+    <button class="sheet-close" id="closeBtn" aria-label="Close menu">${icon("x", "ic-lg")}</button>
+    <div class="sheet-links">
+      ${NAV_LINKS.map((l) => `<a href="${l.href}" data-close>${l.label} ${icon("arrow-up-right", "ic-lg")}</a>`).join("")}
+    </div>
+    <a class="sheet-cta" href="mailto:${CONFIG.email}">Get in touch ${icon("arrow-up-right", "ic")}</a>
+  </aside>`;
+}
+
+function hero() {
+  return `
+  <section id="top" class="hero">
+    <div class="grid-lines"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-grid">
+        <div class="reveal" style="--y:28px">
+          <p class="eyebrow-row">
+            <span class="item">${icon("map-pin", "ic")} ${esc(CONFIG.location)}</span>
+            <span class="sep">·</span>
+            <span class="item muted"><span class="ping"></span> Open to opportunities</span>
+          </p>
+          <h1>${esc(CONFIG.name)}</h1>
+          <p class="hero-sub">${esc(CONFIG.headline)}</p>
+          <p class="hero-lede">${esc(CONFIG.intro)}</p>
+          <div class="chips">
+            ${CONFIG.focusAreas.map((a) => `<span class="chip">${esc(a)}</span>`).join("")}
+          </div>
+          <div class="cta-row">
+            <a class="btn-pill btn-dark" style="padding:14px 24px;font-weight:700" href="mailto:${CONFIG.email}">${icon("mail", "ic")} Get in touch ${icon("arrow-up-right", "ic")}</a>
+            <a class="btn-pill btn-outline" href="#experience">View experience ${icon("arrow-down", "ic")}</a>
+          </div>
+        </div>
+
+        <div class="glance reveal" style="--y:28px;--d:0.12s">
+          <p class="label">${icon("sparkles", "ic")} At a glance</p>
+          <dl>
+            <div>${icon("mail", "ic")}<div style="min-width:0"><dt>Email</dt><dd><a href="mailto:${CONFIG.email}">${CONFIG.email}</a></dd></div></div>
+            <div>${icon("phone", "ic")}<div><dt>Phone</dt><dd><a href="tel:${tel(CONFIG.phone)}">${CONFIG.phone}</a></dd></div></div>
+            <div>${icon("graduation-cap", "ic")}<div><dt>Education</dt><dd>${esc(CONFIG.glance.education)}</dd></div></div>
+            <div>${icon("briefcase", "ic")}<div><dt>Experience</dt><dd>${esc(CONFIG.glance.experience)}</dd></div></div>
+            <div>${icon("award", "ic")}<div><dt>Certifications</dt><dd>${esc(CONFIG.glance.certifications)}</dd></div></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function stats() {
+  return `
+  <section class="stats">
+    <div class="stats-grid">
+      ${STATS.map((s) => `
+        <div class="stat reveal">
+          <p class="stat-value"><span data-count="${s.value}" data-suffix="${s.suffix}">0${s.suffix}</span></p>
+          <p class="stat-label">${s.label}</p>
+        </div>`).join("")}
+    </div>
+  </section>`;
+}
+
+function heading(eyebrow, title, intro) {
+  return `
+  <div class="section-head reveal">
+    <p class="section-eyebrow">( ${eyebrow} )</p>
+    <h2 class="section-title">${title}</h2>
+    ${intro ? `<p class="section-intro">${intro}</p>` : ""}
+  </div>`;
+}
+
+function profile() {
+  return `
+  <section id="profile" class="wrap section">
+    ${heading("Profile", "Bridging business, finance and education.")}
+    <div class="two-col">
+      <div class="reveal span-7">
+        <div class="prose">${PROFILE_PARAS.map((p) => `<p>${esc(p)}</p>`).join("")}</div>
+      </div>
+      <div class="reveal span-5" style="--d:0.1s">
+        <div class="card">
+          <p class="card-label">Career focus</p>
+          <ul class="bullet-list">
+            ${CONFIG.focusAreas.map((a) => `<li><span class="dot"></span>${esc(a)}</li>`).join("")}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function roles() {
+  return `
+  <section id="roles" class="section band">
+    <div class="wrap">
+      ${heading("Target Roles", "Open to these opportunities.", "Actively seeking roles across administration, analysis, operations, strategy and education technology — excluding teaching and teacher-assistance positions.")}
+      <div class="grid-3">
+        ${TARGET_ROLES.map((r, i) => `
+          <div class="reveal" style="--d:${((i % 3) * 0.06).toFixed(2)}s">
+            <div class="role">
+              <div class="role-top">
+                <span class="idx">${String(i + 1).padStart(2, "0")}</span>
+                ${icon("arrow-up-right", "ic")}
+              </div>
+              <h3>${esc(r.title)}</h3>
+              <p>${esc(r.desc)}</p>
+            </div>
+          </div>`).join("")}
+      </div>
+    </div>
+  </section>`;
+}
+
+function experience() {
+  return `
+  <section id="experience" class="wrap section">
+    ${heading("Experience", "Hands-on programme delivery.", "Internship experience coordinating assessment, intervention design and stakeholder reporting in a resource-constrained education setting.")}
+    <div class="stack">
+      ${EXPERIENCE.map((e, i) => `
+        <div class="exp reveal" style="--d:${(i * 0.05).toFixed(2)}s">
+          <div class="exp-head">
+            <h3>${esc(e.role)}</h3>
+            <span class="period">${e.period}</span>
+          </div>
+          <p class="exp-org">${esc(e.org)} · ${esc(e.place)}</p>
+          <ul>
+            ${e.points.map((p) => `<li><span class="dot"></span>${esc(p)}</li>`).join("")}
+          </ul>
+        </div>`).join("")}
+    </div>
+  </section>`;
+}
+
+function projects() {
+  return `
+  <section id="projects" class="section band">
+    <div class="wrap">
+      ${heading("Projects", "Selected work & research.", "Applied risk analysis, mixed-methods education research and financial portfolio evaluation.")}
+      <div class="grid-proj">
+        ${PROJECTS.map((p, i) => `
+          <div class="reveal" style="--d:${((i % 3) * 0.07).toFixed(2)}s">
+            <div class="proj">
+              <div class="proj-top">
+                <span class="idx">${String(i + 1).padStart(2, "0")}</span>
+                <span class="proj-period">${p.period}</span>
+              </div>
+              <h3>${esc(p.title)}</h3>
+              <p class="proj-tags">${esc(p.tags)}</p>
+              <p>${esc(p.desc)}</p>
+            </div>
+          </div>`).join("")}
+      </div>
+    </div>
+  </section>`;
+}
+
+function skills() {
+  return `
+  <section id="skills" class="wrap section">
+    ${heading("Skills", "A versatile, cross-functional toolkit.", "Spanning business administration, research methodology, digital tools and interpersonal strengths.")}
+    <div class="grid-2">
+      ${SKILL_GROUPS.map((g, i) => `
+        <div class="reveal" style="--d:${((i % 2) * 0.06).toFixed(2)}s">
+          <div class="card skill-card" style="height:100%">
+            <h3>${esc(g.title)}</h3>
+            <div class="tags">${g.items.map((it) => `<span class="tag">${esc(it)}</span>`).join("")}</div>
+          </div>
+        </div>`).join("")}
+    </div>
+  </section>`;
+}
+
+function education() {
+  return `
+  <section id="education" class="section band">
+    <div class="wrap">
+      ${heading("Education & Certifications", "Academic foundation.", "A postgraduate degree in education built on a BBA in Finance & HR, reinforced by professional certifications.")}
+      <div class="two-col">
+        <div class="span-7">
+          <p class="card-label" style="display:flex;align-items:center;gap:8px">${icon("graduation-cap", "ic")} Education</p>
+          <ol class="timeline">
+            ${EDUCATION.map((e, i) => `
+              <li class="reveal" style="--y:20px;--d:${(i * 0.04).toFixed(2)}s">
+                <span class="node"></span>
+                <div class="edu-head">
+                  <h3>${esc(e.degree)}</h3>
+                  <span class="edu-period">${e.period}</span>
+                </div>
+                <p class="edu-org">${esc(e.org)} · ${esc(e.place)}</p>
+              </li>`).join("")}
+          </ol>
+        </div>
+        <div class="span-5">
+          <p class="card-label" style="display:flex;align-items:center;gap:8px">${icon("award", "ic")} Certifications</p>
+          <div>
+            ${CERTIFICATIONS.map((c, i) => `
+              <div class="cert reveal" style="--y:20px;--d:${(i * 0.05).toFixed(2)}s">
+                <div><p>${esc(c.title)}</p><p>${esc(c.issuer)}</p></div>
+                ${icon("award", "ic-lg")}
+              </div>`).join("")}
+          </div>
+
+          <p class="card-label" style="display:flex;align-items:center;gap:8px;margin-top:32px">${icon("sparkles", "ic")} Leadership &amp; Achievements</p>
+          <div>
+            ${LEADERSHIP.map((l, i) => `
+              <div class="lead-card reveal" style="--y:20px;--d:${(i * 0.05).toFixed(2)}s">
+                <p>${esc(l.title)}</p>
+                <p>${esc(l.desc)}</p>
+              </div>`).join("")}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function languages() {
+  return `
+  <section class="wrap section">
+    ${heading("Languages & Interests", "Multilingual, with breadth beyond work.")}
+    <div class="two-col">
+      <div class="span-8">
+        <p class="card-label" style="display:flex;align-items:center;gap:8px">${icon("languages", "ic")} Languages known</p>
+        <div class="lang-grid">
+          ${LANGUAGES.map((l, i) => `
+            <div class="lang reveal" style="--y:18px;--d:${((i % 2) * 0.05).toFixed(2)}s">
+              <div>
+                <p>${esc(l.name)}</p>
+                ${l.note ? `<p>${esc(l.note)}</p>` : ""}
+              </div>
+              <span class="level">${l.level}</span>
+            </div>`).join("")}
+        </div>
+      </div>
+      <div class="span-4">
+        <p class="card-label" style="display:flex;align-items:center;gap:8px">${icon("sparkles", "ic")} Hobbies &amp; Interests</p>
+        <div>
+          ${INTERESTS.map((it, i) => `<div class="interest reveal" style="--y:18px;--d:${(i * 0.05).toFixed(2)}s">${esc(it)}</div>`).join("")}
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function contact() {
+  return `
+  <section id="contact" class="contact">
+    <div class="halftone-accent"></div>
+    <div class="wrap contact-inner">
+      <div class="reveal" style="max-width:48rem">
+        <p class="section-eyebrow">( Contact )</p>
+        <h2>Let’s work together.</h2>
+        <p class="contact-lede">Open to analyst, operations, HR and ed-tech roles. I’d be glad to share my CV and discuss how I can contribute to your team.</p>
+      </div>
+
+      <div class="reveal" style="--d:0.1s">
+        <div class="contact-cards">
+          <a class="contact-card" href="mailto:${CONFIG.email}">
+            ${icon("mail", "ic-lg")}
+            <div class="meta"><p class="k">Email</p><p class="v">${CONFIG.email}</p></div>
+            ${icon("arrow-up-right", "ic")}
+          </a>
+          <a class="contact-card" href="tel:${tel(CONFIG.phone)}">
+            ${icon("phone", "ic-lg")}
+            <div class="meta"><p class="k">Phone</p><p class="v">${CONFIG.phone}</p></div>
+            ${icon("arrow-up-right", "ic")}
+          </a>
+          <div class="contact-card">
+            ${icon("map-pin", "ic-lg")}
+            <div class="meta"><p class="k">Location</p><p class="v">Hyderabad, India</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="--d:0.15s">
+        <div class="contact-actions">
+          <a class="btn-pill btn-accent" href="mailto:${CONFIG.email}">${icon("mail", "ic")} Send an email ${icon("arrow-up-right", "ic")}</a>
+          <a class="btn-pill btn-ghost-light" href="#profile">${icon("download", "ic")} Back to top</a>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function footer() {
+  return `
+  <footer>
+    <div class="footer-inner">
+      <a href="#top" class="footer-brand">
+        <span class="monogram">${CONFIG.initials}</span>
+        <span>${esc(CONFIG.name)}</span>
+      </a>
+      <nav class="footer-nav">
+        ${NAV_LINKS.map((l) => `<a href="${l.href}">${l.label}</a>`).join("")}
+      </nav>
+      <p class="copy">© ${new Date().getFullYear()} ${esc(CONFIG.name)}</p>
+    </div>
+  </footer>`;
+}
+
+document.getElementById("app").innerHTML = `
+  ${header()}
+  <main>
+    ${hero()}
+    ${stats()}
+    ${profile()}
+    ${roles()}
+    ${experience()}
+    ${projects()}
+    ${skills()}
+    ${education()}
+    ${languages()}
+    ${contact()}
+  </main>
+  ${footer()}
+`;
+
+/* =====================================================================
+   BEHAVIOUR
+   ===================================================================== */
+if (window.lucide) lucide.createIcons();
+
+// Mobile menu
+const sheet = document.getElementById("sheet");
+const overlay = document.getElementById("overlay");
+const menuBtn = document.getElementById("menuBtn");
+function setMenu(open) {
+  sheet.classList.toggle("open", open);
+  overlay.classList.toggle("open", open);
+  sheet.setAttribute("aria-hidden", String(!open));
+  menuBtn.setAttribute("aria-expanded", String(open));
+}
+menuBtn.addEventListener("click", () => setMenu(true));
+document.getElementById("closeBtn").addEventListener("click", () => setMenu(false));
+overlay.addEventListener("click", () => setMenu(false));
+sheet.querySelectorAll("[data-close]").forEach((a) => a.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+
+// Reveal on scroll (once)
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const revealIO = new IntersectionObserver((entries) => {
+  entries.forEach((en) => {
+    if (en.isIntersecting) {
+      en.target.classList.add("in");
+      revealIO.unobserve(en.target);
+    }
+  });
+}, { rootMargin: "0px 0px -60px 0px" });
+document.querySelectorAll(".reveal").forEach((el) => {
+  if (reduce) el.classList.add("in");
+  else revealIO.observe(el);
+});
+
+// Count-up stats
+const EASE = (p) => 1 - Math.pow(1 - p, 3);
+document.querySelectorAll("[data-count]").forEach((el) => {
+  const target = Number(el.dataset.count);
+  const suffix = el.dataset.suffix || "";
+  if (reduce) { el.textContent = target + suffix; return; }
+  const io = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    io.disconnect();
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / 1600, 1);
+      el.textContent = Math.round(target * EASE(p)) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, { threshold: 0.3 });
+  io.observe(el);
+});
+</script>
+</body>
+</html>
