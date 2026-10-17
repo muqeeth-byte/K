@@ -415,6 +415,30 @@
   .footer-nav a { padding: 0; font-family: "Space Mono", monospace; font-size: 11px; text-transform: uppercase; letter-spacing: .15em; }
   .copy { font-family: "Space Mono", monospace; font-size: 11px; color: var(--muted-fg); }
 
+    /* ---------- Scroll progress bar ---------- */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 70;
+    height: 3px; pointer-events: none; background: transparent;
+  }
+  .scroll-progress-bar {
+    height: 100%; width: 100%; background: var(--accent);
+    transform-origin: 0 50%; transform: scaleX(0);
+  }
+
+  /* ---------- Floating back-to-top button ---------- */
+  .to-top {
+    position: fixed; right: 20px; bottom: 24px; z-index: 40;
+    width: 48px; height: 48px; border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid var(--border); background: var(--card); color: var(--foreground);
+    box-shadow: 0 4px 14px rgba(0,0,0,.08); cursor: pointer;
+    opacity: 0; transform: translateY(12px); pointer-events: none;
+    transition: opacity .3s, transform .3s, background .2s, color .2s, border-color .2s;
+  }
+  .to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+  .to-top:hover { background: var(--accent); color: var(--background); border-color: var(--accent); }
+  .to-top:active { transform: scale(.96); }
+  @media (min-width: 640px) { .to-top { right: 28px; bottom: 28px; } }
   /* ---------- Entrance reveal ---------- */
   .reveal {
     opacity: 0; transform: translateY(var(--y, 24px));
@@ -432,7 +456,8 @@
 </head>
 <body>
 <div id="app"></div>
-
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar" id="progressBar"></div></div>
+<button class="to-top" id="toTop" aria-label="Back to top"><i data-lucide="arrow-up" class="ic-lg"></i></button>
 <script>
 /* =====================================================================
    CONTENT — edit everything you want to change here.
@@ -874,7 +899,7 @@ function contact() {
       <div class="reveal" style="--d:0.15s">
         <div class="contact-actions">
           <a class="btn-pill btn-accent" href="mailto:${CONFIG.email}">${icon("mail", "ic")} Send an email ${icon("arrow-up-right", "ic")}</a>
-          <a class="btn-pill btn-ghost-light" href="#profile">${icon("download", "ic")} Back to top</a>
+          <a class="btn-pill btn-ghost-light" href="#top">${icon("arrow-up", "ic")} Back to top</a>
         </div>
       </div>
     </div>
@@ -949,7 +974,27 @@ document.querySelectorAll(".reveal").forEach((el) => {
   if (reduce) el.classList.add("in");
   else revealIO.observe(el);
 });
-
+// Scroll progress bar + floating back-to-top button
+const progressBar = document.getElementById("progressBar");
+const toTop = document.getElementById("toTop");
+function updateScroll() {
+  const doc = document.documentElement;
+  const max = doc.scrollHeight - doc.clientHeight;
+  const p = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+  progressBar.style.transform = `scaleX(${p})`;
+  toTop.classList.toggle("show", window.scrollY > 400);
+}
+let scrollTicking = false;
+window.addEventListener("scroll", () => {
+  if (scrollTicking) return;
+  scrollTicking = true;
+  requestAnimationFrame(() => { updateScroll(); scrollTicking = false; });
+}, { passive: true });
+window.addEventListener("resize", updateScroll);
+toTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" });
+});
+updateScroll();
 // Count-up stats
 const EASE = (p) => 1 - Math.pow(1 - p, 3);
 document.querySelectorAll("[data-count]").forEach((el) => {
